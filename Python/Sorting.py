@@ -11,6 +11,19 @@ def Bubble_Sort(arr):
                 arr[j], arr[j+1] = arr[j+1], arr[j]
     return arr          
 
+# Insertion Sort
+def Insertion_Sort(arr):
+    for i in range(len(arr) - 1):
+        if(arr[i] > arr[i+1]): 
+            j = i+1;
+            while j > 0:
+                if(arr[j - 1] > arr[j]):
+                    arr[j - 1], arr[j] = arr[j], arr[j - 1]
+                    j -= 1
+                else:
+                    break
+    return arr
+
 # Generate Integer Array
 def Generate_Int_Array(n):
     arr = []
@@ -31,7 +44,12 @@ def main():
     array = Generate_Int_Array(50)
     Print_Array(array)
 
-    print("Sorted Array")
-
+    print("Sorted By Bubble Sort")
     sorted_array = Bubble_Sort(array)
     Print_Array(sorted_array)
+
+    print("Sorted By Insertion Sort")
+    sorted_array = Insertion_Sort(array)
+    Print_Array(sorted_array)
+
+main()
