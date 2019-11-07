@@ -24,6 +24,17 @@ def Insertion_Sort(arr):
                     break
     return arr
 
+# Selection Sort
+def Selection_Sort(arr):
+    for i in range(len(arr) - 1):
+        minIndex = i
+        # Find Min Value
+        for j in range(i+1, len(arr)):
+            if arr[j] < arr[minIndex]:
+                minIndex = j
+        arr[i], arr[minIndex] = arr[minIndex], arr[i]
+    return arr
+
 # Generate Integer Array
 def Generate_Int_Array(n):
     arr = []
@@ -51,5 +62,9 @@ def main():
     print("Sorted By Insertion Sort")
     sorted_array = Insertion_Sort(array)
     Print_Array(sorted_array)
+    
+    print("Sorted By Selection Sort")
+    sorted_array = Selection_Sort(array)
+    Print_Array(sorted_array)    
 
 main()
