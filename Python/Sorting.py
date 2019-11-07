@@ -8,6 +8,7 @@ def Bubble_Sort(arr):
     for i in range(len(arr) - 1):
         for j in range(len(arr)-1):
             if(arr[j] > arr[j+1]):
+                # Swap
                 arr[j], arr[j+1] = arr[j+1], arr[j]
     return arr          
 
@@ -18,6 +19,7 @@ def Insertion_Sort(arr):
             j = i+1;
             while j > 0:
                 if(arr[j - 1] > arr[j]):
+                    # Swap
                     arr[j - 1], arr[j] = arr[j], arr[j - 1]
                     j -= 1
                 else:
@@ -32,6 +34,7 @@ def Selection_Sort(arr):
         for j in range(i+1, len(arr)):
             if arr[j] < arr[minIndex]:
                 minIndex = j
+        # Swap
         arr[i], arr[minIndex] = arr[minIndex], arr[i]
     return arr
 
