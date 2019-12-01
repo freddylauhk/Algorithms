@@ -38,6 +38,40 @@ def Selection_Sort(arr):
         arr[i], arr[minIndex] = arr[minIndex], arr[i]
     return arr
 
+# Merge Sort
+def Merge_Sort(arr): 
+    if len(arr) >1: 
+        mid = len(arr)//2   #Finding the mid of the array 
+        left = arr[:mid]    # Dividing the array to left and right
+        right = arr[mid:]   
+  
+        Merge_Sort(left) # Sort the first half 
+        Merge_Sort(left) # Sort the second half 
+  
+        i = j = k = 0
+        
+        while i < len(left) and j < len(right): 
+            if left[i] < right[j]: 
+                arr[k] = left[i] 
+                i+=1
+            else: 
+                arr[k] = right[j] 
+                j+=1
+            k+=1
+          
+        # Checking if any element was left 
+        while i < len(left): 
+            arr[k] = left[i] 
+            i+=1
+            k+=1
+          
+        while j < len(right): 
+            arr[k] = right[j] 
+            j+=1
+            k+=1
+
+    return arr
+
 # Generate Integer Array
 def Generate_Int_Array(n):
     arr = []
@@ -68,6 +102,10 @@ def main():
     
     print("Sorted By Selection Sort")
     sorted_array = Selection_Sort(array)
-    Print_Array(sorted_array)    
+    Print_Array(sorted_array)
+
+    print("Sorted By Merge Sort")
+    sorted_array = Merge_Sort(array)
+    Print_Array(sorted_array) 
 
 main()
