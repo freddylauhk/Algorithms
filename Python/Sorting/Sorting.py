@@ -2,10 +2,12 @@
 from random import seed
 from random import randint
 
+from SortUtil import *
 from BubbleSort import *
 from InsertionSort import *
 from SelectionSort import *
 from MergeSort import *
+from QuickSort import *
 
 # Generate Integer Array
 def Generate_Int_Array(n):
@@ -25,23 +27,43 @@ def Print_Array(arr):
 def main():
     #array = [6, 5, 9, 7, 5, 3, 4, 6]
     print("Unsorted Array")
-    array = Generate_Int_Array(50)
+    array = Generate_Int_Array(10)
     Print_Array(array)
+    print()
 
     print("Sorted By Bubble Sort")
+    array = Generate_Int_Array(10)
+    Print_Array(array)
     sorted_array = Bubble_Sort(array)
     Print_Array(sorted_array)
+    print()
 
     print("Sorted By Insertion Sort")
+    array = Generate_Int_Array(10)
+    Print_Array(array)
     sorted_array = Insertion_Sort(array)
     Print_Array(sorted_array)
+    print()
     
     print("Sorted By Selection Sort")
+    array = Generate_Int_Array(10)
+    Print_Array(array)
     sorted_array = Selection_Sort(array)
     Print_Array(sorted_array)
+    print()
 
     print("Sorted By Merge Sort")
+    array = Generate_Int_Array(10)
+    Print_Array(array)
     sorted_array = Merge_Sort(array)
-    Print_Array(sorted_array) 
+    Print_Array(sorted_array)
+    print()
+
+    print("Sorted By Quick Sort")
+    array = Generate_Int_Array(10)
+    Print_Array(array)
+    sorted_array = QuickSort(array, 0, len(array) - 1)
+    Print_Array(sorted_array)
+    print()
 
 main()

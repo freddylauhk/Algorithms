@@ -1,3 +1,5 @@
+from SortUtil import *
+
 # Selection Sort
 def Selection_Sort(arr):
     for i in range(len(arr) - 1):
@@ -7,5 +9,5 @@ def Selection_Sort(arr):
             if arr[j] < arr[minIndex]:
                 minIndex = j
         # Swap
-        arr[i], arr[minIndex] = arr[minIndex], arr[i]
+        Swap(arr, i, minIndex)
     return arr
