@@ -9,7 +9,7 @@ def QuickSort(arr, low, high):
     return(arr)
 
 def Partition(arr, low, high):
-    pivot = high
+    pivot = high        # Set the last element in the array as pivot 
     i = low - 1
     for j in range(low, high):
         if(arr[j] <= arr[pivot]):
